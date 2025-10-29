@@ -387,16 +387,16 @@
 
 .newsletter-button {
     padding: 8px 16px;
-    background: #ffd700;
+    background: #1310bd;
     border: none;
     border-radius: 4px;
-    color: #072033;
+    color: #ffffff;
     cursor: pointer;
     transition: background 0.3s ease;
 }
 
 .newsletter-button:hover {
-    background: #ffed4a;
+    background: #9c07ff;
 }
 
 .copyright {
