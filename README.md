@@ -18,7 +18,7 @@ Siga estes passos simples para visualizar o **GameMania** no seu navegador:
 
 1.  **Clone o Repositório** (Se estiver usando Git):
     ```bash
-    git clone [LINK_DO_SEU_REPOSITORIO]
+    git clone https://github.com/gaspudo/GameMania.git
     ```
     *(Se não estiver usando Git, baixe o arquivo ZIP do projeto e descompacte-o).*
 2.  **Localize o Arquivo:** Encontre o arquivo `index.html` na pasta do projeto.
