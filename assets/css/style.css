@@ -479,7 +479,7 @@ body {
             text-align: center;
             margin-bottom: 30px;
             font-size: 28px;
-            color: #3302e2
+            color: #3302e2;
             /* Borda para destacar o título */
             padding-bottom: 10px;
             border-bottom: 2px solid rgba(255, 255, 255, 0.2);
