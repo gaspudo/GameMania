@@ -4,6 +4,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* Cor de Fundo do Body */
+body {
+    
+    background-color: #3302e2
+}
 
 /* Header principal */
 .site-header {
@@ -36,6 +41,58 @@
     height: auto;
     object-fit: contain;
 }
+/* Estilos para os links de Login e Cadastro (Auth) */
+.logo-center {
+    /* Alinha o logo e os links horizontalmente */
+    display: flex;
+    flex-direction: column; /* Mantém o logo no topo */
+    align-items: center;
+    gap: 5px; /* Espaço entre o logo e os links */
+}
+
+.auth-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 5px; /* Separa um pouco do logo */
+}
+
+.auth-button {
+    /* Reutiliza o estilo de botão já conhecido */
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white; /* Texto branco */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    
+    /* Usa a cor azul de destaque para o fundo */
+    background-color: #002fff; 
+    border: 1px solid transparent; 
+}
+
+.auth-button:hover {
+    /* Usa a cor roxa/gradiente de destaque no hover */
+    background-color: #9c07ff; 
+    transform: scale(1.05);
+}
+
+.auth-separator {
+    color: #ffffff; /* Cor branca para o texto 'ou' */
+    font-size: 14px;
+}
+
+/* Opcional: Estilo diferente para o botão de Cadastro */
+.auth-button.register {
+    background: #3302e2; /* Um tom de roxo mais escuro */
+    border: 1px solid #002fff;
+}
+
+.auth-button.register:hover {
+    background: #540688;
+}
+
 
 /* Header inferior (casa, barra de busca, carrinho) */
 .header-bottom {
@@ -406,3 +463,190 @@
     border-top: 1px solid rgba(255,255,255,0.1);
     font-size: 14px;
 }
+
+.register-container {
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 30px;
+            /* Usamos o mesmo gradiente do header/footer para o container */
+            background: #200079;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            color: #ffffff; /* Texto branco para contraste */
+        }
+
+        .register-container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+            color: #3302e2
+            /* Borda para destacar o título */
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            box-sizing: border-box; /* Garante que padding não aumente a largura total */
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: #002fff; /* Cor do hover do link */
+            box-shadow: 0 0 5px rgba(0, 47, 255, 0.5);
+        }
+
+        /* Reutiliza o estilo do botão de adicionar ao carrinho */
+        .register-button {
+            width: 100%;
+            padding: 12px;
+            background-color: #002fff; /* Cor azul de destaque */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .register-button:hover {
+            background-color: #9c07ff; /* Cor roxa de destaque do botão de newsletter */
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 47, 255, 0.4);
+        }
+
+        .login-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .login-link a {
+            color: #002fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .login-link a:hover {
+            color: #ffffff;
+        }
+
+                .login-container {
+            max-width: 400px; /* Um pouco menor que o cadastro */
+            margin: 80px auto; /* Mais margem superior para centralizar melhor */
+            padding: 30px;
+            /* Usamos o mesmo gradiente do header/footer para o container */
+            background: #200079;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            color: #ffffff; /* Texto branco para contraste */
+        }
+
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+            color: #ffffff;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: #002fff;
+            box-shadow: 0 0 5px rgba(0, 47, 255, 0.5);
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 12px;
+            background-color: #002fff; /* Cor azul de destaque */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .login-button:hover {
+            background-color: #9c07ff; /* Cor roxa de destaque */
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 47, 255, 0.4);
+        }
+
+        .forgot-password {
+            display: block;
+            text-align: right;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        
+        .forgot-password a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .forgot-password a:hover {
+            color: #002fff;
+        }
+
+        .register-link {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .register-link a {
+            color: #002fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .register-link a:hover {
+            color: #ffffff;
+        }
