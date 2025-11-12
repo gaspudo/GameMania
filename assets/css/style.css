@@ -650,3 +650,147 @@ body {
         .register-link a:hover {
             color: #ffffff;
         }
+      
+        .cart-page {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            color: #ffffff; /* Texto branco */
+        }
+
+        .cart-page h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #ffffff; /* Cor azul de destaque */
+        }
+
+        /* --- Tabela de Itens --- */
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            background-color: #242323; /* Fundo escuro para a tabela */
+            border-radius: 8px;
+            overflow: hidden; /* Garante que os cantos arredondados funcionem */
+        }
+
+        .cart-table th, .cart-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .cart-table th {
+            background-color: #3302e2; /* Fundo roxo/azul do header */
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .cart-item-details {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .item-image {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .item-title {
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        /* Controle de Quantidade */
+        .quantity-control {
+            display: flex;
+            align-items: center;
+        }
+
+        .quantity-control input {
+            width: 50px;
+            text-align: center;
+            padding: 5px;
+            margin: 0 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #ffffff;
+            color: #333;
+        }
+
+        .remove-button {
+            background: none;
+            border: none;
+            color: #ff4d4d; /* Cor vermelha para remover */
+            cursor: pointer;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .remove-button:hover {
+            color: #ff0000;
+        }
+
+        /* --- Resumo do Carrinho (Sidebar) --- */
+        .cart-summary {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 30px;
+        }
+
+        .summary-box {
+            width: 100%;
+            max-width: 350px;
+            padding: 25px;
+            background: linear-gradient(135deg, #540688 0%, #3302e2 100%); /* Gradiente reverso */
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .summary-box h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+        }
+
+        .summary-line {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .total-line {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #ffffff;
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        /* Botão Finalizar Compra (reutilizando estilo do botão de destaque) */
+        .checkout-button {
+            width: 100%;
+            padding: 15px;
+            margin-top: 25px;
+            background-color: #002fff; /* Azul de destaque */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .checkout-button:hover {
+            background-color: #9c07ff; /* Roxo de destaque */
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(0, 47, 255, 0.6);
+        }
