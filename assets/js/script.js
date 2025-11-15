@@ -14,76 +14,48 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('Navegando para Login...');
         });
     }
+})
 
     // =========================================================
     // FUNÇÕES ESPECÍFICAS DA PÁGINA DO CARRINHO (carrinho.html)
     // =========================================================
 
-    if (document.querySelector('.cart-page')) {
-        handleCartInteractions();
+    function atualizarCarrinho() {
+    let subtotal = 0;
+    document.querySelectorAll('.cart-item').forEach(item => {
+        const preco = parseFloat(item.querySelector('.item-price').dataset.price);
+        const qtd = parseInt(item.querySelector('.quantity-input').value);
+        const itemTotal = preco * qtd;
+        
+        item.querySelector('.item-subtotal').textContent = 
+            'R$ ' + itemTotal.toFixed(2).replace('.', ',');
+        subtotal += itemTotal;
+    });
+    
+    const frete = 35.00;
+    document.getElementById('subtotal-value').textContent = 
+        'R$ ' + subtotal.toFixed(2).replace('.', ',');
+    document.getElementById('total-value').textContent = 
+        'R$ ' + (subtotal + frete).toFixed(2).replace('.', ',');
+}
+
+function removerItem(botao) {
+    if(confirm('Deseja remover este item?')) {
+        botao.closest('.cart-item').remove();
+        atualizarCarrinho();
+    }
+}
+
+//confirmação de senha
+document.querySelector('form').addEventListener('submit', function(e) {
+    const senha = document.getElementById('password').value;
+    const confirma = document.getElementById('confirm-password').value;
+    
+    if(senha !== confirma) {
+        e.preventDefault();
+        alert('As senhas não coincidem!');
     }
 });
-
-
-function handleCartInteractions() {
-    const cartItems = document.querySelectorAll('.cart-item');
-    const subtotalValue = document.getElementById('subtotal-value');
-    const totalValue = document.getElementById('total-value');
-    const shipping = 35.00; // Frete fixo R$ 35,00
-
-    function formatCurrency(value) {
-        return `R$ ${value.toFixed(2).replace('.', ',')}`;
-    }
-
-    function updateCartTotal() {
-        let currentSubtotal = 0;
-
-        cartItems.forEach(item => {
-            const priceText = item.querySelector('.item-price').textContent;
-            // Extrai o valor do texto (ex: "R$ 419,99" -> 419.99)
-            const price = parseFloat(priceText.replace('R$', '').replace(',', '.').trim());
-            const quantityInput = item.querySelector('.quantity-control input');
-            const quantity = parseInt(quantityInput.value);
-            const itemSubtotalElement = item.querySelector('.item-subtotal');
-            
-            const itemTotal = price * quantity;
-            currentSubtotal += itemTotal;
-
-            // Atualiza o total do item na coluna
-            itemSubtotalElement.textContent = formatCurrency(itemTotal);
-        });
-
-        const finalTotal = currentSubtotal + shipping;
-
-        // Atualiza os valores no resumo
-        subtotalValue.textContent = formatCurrency(currentSubtotal);
-        totalValue.textContent = formatCurrency(finalTotal);
-    }
-
-    // Adicionar listeners para botões de quantidade e remoção
-    cartItems.forEach(item => {
-        const quantityInput = item.querySelector('.quantity-control input');
-        const removeButton = item.querySelector('.remove-button');
-
-        // Listener para mudança de quantidade
-        quantityInput.addEventListener('change', updateCartTotal);
-        
-        // Listener para remoção do item
-        removeButton.addEventListener('click', () => {
-            // Remove a linha (tr) do item do DOM
-            item.remove();
-            
-            // Re-calcula o total (já que a lista de itens mudou)
-            updateCartTotal(); 
-            
-            // *Opcional: Você precisaria remover o item de um array de estado real
-            // ou atualizar o backend aqui.*
-        });
-    });
-
-    // Inicia o cálculo do total ao carregar a página
-    updateCartTotal();
-}
 
 //bloco do jquery-------
 $(function() {

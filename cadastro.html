@@ -60,7 +60,9 @@
 
                 <div class="form-group">
                     <label for="password">Senha</label>
-                    <input type="password" id="password" name="password" class="form-input" required>
+                    <input type="password" id="password" name="password" class="form-input" required
+                    minlength="8"  title="Mínimo 8 caracteres, um número, Maíusculas e minúsculas" required> 
+                    <small>Mínimo 8 caracteres com letras e números</small>
                 </div>
                 
                 <div class="form-group">
@@ -70,8 +72,10 @@
                 
                 <div class="form-group">
                     <label for="phone">Telefone (Opcional)</label>
-                    <input type="tel" id="phone" name="phone" class="form-input">
+                    <input type="tel" id="phone" name="phone" class="form-input" placeholder="(11) 99999-9999" pattern="\(d2) \d{5}\d{4}">
                 </div>
+
+                
 
                 <button type="submit" class="register-button">Cadastrar</button>
             </form>
