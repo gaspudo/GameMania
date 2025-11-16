@@ -387,6 +387,7 @@ body {
     transition: var(--transicao-padrao);
     position: relative;
     overflow: hidden;
+    user-select: none;
 }
 
 /* Efeito de brilho ao passar mouse */
@@ -400,6 +401,7 @@ body {
     background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
     transform: rotate(45deg);
     transition: var(--transicao-padrao);
+   
 }
 
 .product-item:hover::before {
@@ -581,6 +583,7 @@ body {
     max-width: 1400px;
     margin: 60px auto;
     padding: 0 30px;
+    user-select: none;
 }
 
 .cart-page h2 {
@@ -589,6 +592,7 @@ body {
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
+   
 }
 
 .cart-table {
@@ -599,6 +603,7 @@ body {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    
 }
 
 .cart-table th,
@@ -672,6 +677,7 @@ body {
 .cart-summary {
     display: flex;
     justify-content: flex-end;
+    user-select: none;
 }
 
 .summary-box {
