@@ -59,46 +59,8 @@
                     <th style="width: 5%;"></th>
                 </tr>
             </thead>
-            <tbody>
-                <tbody>
-    <tr class="cart-item" data-product-id="1">
-        <td>
-            <div class="cart-item-details">
-                <img src="assets/imagens/imagem5.png" alt="Monitor Gamer" class="item-image">
-                <span class="item-title">Monitor Gamer LG</span>
-            </div>
-        </td>
-        <td class="item-price" data-price="419.99">R$ 419,99</td>
-        <td>
-            <div class="quantity-control">
-                <input type="number" value="1" min="1" max="10" class="quantity-input" onchange="atualizarCarrinho()">
-                <!--                                              ao mudar o valor, atualizará o carrinho -->
-            </div>
-        </td>
-        <td class="item-subtotal">R$ 419,99</td>
-        <td><button class="remove-button" onclick="removerItem(this)">✕</button></td>
-        <!--                                 quando clicar removerá o item do carrinho e do total       -->
-    </tr>
-                
-                <tr class="cart-item" data-product-id="2">
-                    <td>
-                        <div class="cart-item-details">
-                            <img src="assets/imagens/imagem6.png" alt="Mouse Gamer" class="item-image">
-                            <span class="item-title">Mouse Gamer Redragon</span>
-                        </div>
-                    </td>
-                    <td class="item-price" data-price="239.99">R$ 239,99</td>
-                    <td>
-                        <div class="quantity-control">
-                            <input type="number" value="1" min="1" max="10" class="quantity-input" onchange="atualizarCarrinho()">
-                            <!--                                              ao mudar o valor, atualizará o carrinho -->
-                        </div>
-                    </td>
-                    <td class="item-subtotal">R$ 479,98</td>
-                    <td><button class="remove-button" onclick="removerItem(this)">X</button></td>
-                    <!--                                 quando clicar removerá o item do carrinho e do total       -->
-                </tr>
-            </tbody>
+            <tbody id="cart-items">
+        </tbody>
         </table>
 
         <div class="cart-summary">
@@ -107,20 +69,20 @@
         
         <div class="summary-line">
             <span>Subtotal:</span>
-            <span id="subtotal-value">R$ 899,97</span>
+            <span id="subtotal-value">R$ 0,00</span>
         </div>
 
         <div class="summary-line">
             <span>Frete:</span>
-            <span id="shipping-value">R$ 35,00</span>
+            <span id="shipping-value">R$ 0,00</span>
         </div>
 
         <div class="summary-line total-line">
             <span>Total:</span>
-            <span id="total-value">R$ 934,97</span>
+            <span id="total-value">R$ 0,00</span>
         </div>
 
-        <button class="checkout-button" onclick="finalizarCompra()">Finalizar Compra</button>
+        <button class="checkout-button">Finalizar Compra</button>
     </div>
 </div>
     </main>
@@ -176,7 +138,8 @@
         </nav>
     </footer>
 
-    <script src="assets/js/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    
 </body>
 </html>
