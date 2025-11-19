@@ -268,7 +268,7 @@ body {
 }
 
 /* ========================================
-   BANNER SLIDER - ESTILO BRIEFING
+   BANNER SLIDER 
    ======================================== */
 
 .banner {
@@ -661,7 +661,7 @@ body {
 }
 
 .cart-table th {
-    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+    background: var(--cor-secundaria);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -731,7 +731,7 @@ body {
     width: 100%;
     max-width: 400px;
     padding: 35px;
-    background: linear-gradient(135deg, rgba(84, 6, 136, 0.95), rgba(51, 2, 226, 0.95));
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
     border-radius: 16px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
     border: 2px solid rgba(255, 255, 255, 0.1);
