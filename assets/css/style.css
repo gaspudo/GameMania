@@ -18,7 +18,7 @@
     --cor-texto-claro: #ffffff;
     --cor-fundo-escuro: #242323;
     --cor-fundo-card: #200079;
-    --espacamento-padrao: 20px;
+    --espacamento-padrao: 15px;
     --border-radius: 8px;
     --transicao-padrao: all 0.3s ease;
 }
@@ -36,7 +36,8 @@ body {
    ======================================== */
 
 .site-header {
-    padding: 8px 16px;
+    flex-direction: column;
+    padding: 6px 12px;
     background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-secundaria) 100%);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adiciona profundidade */
     position: sticky; /* Mantém header fixo ao rolar */
@@ -45,10 +46,11 @@ body {
 }
 
 .top-header {
+    order: -1;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
+    flex-direction: row;
+    align-items: left;
+    gap: 4px;
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
@@ -56,7 +58,7 @@ body {
 
 /* Logo */
 .logo {
-    width: 150px;
+    width: 200px;
     height: auto;
     transition: transform 0.3s ease;
 }
@@ -74,7 +76,6 @@ body {
 /* Links de Autenticação */
 .logo-center {
     display: flex;
-    flex-direction: column;
     align-items: center;
     gap: 10px;
 }
@@ -82,15 +83,16 @@ body {
 .auth-links {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-top: 5px;
+    gap: 6px;
+    margin-top: 6px;
 }
 
 .auth-button {
+    white-space: nowrap;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 10px 50px;
     border-radius: 25px; /* Botões arredondados modernos */
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
     color: var(--cor-texto-claro);
     background-color: var(--cor-destaque);
@@ -121,7 +123,9 @@ body {
 
 /* Header Inferior */
 .header-bottom {
+    order: 1;
     display: flex;
+    flex-direction:row;
     align-items: center;
     justify-content: space-between;
     width: 100%;
@@ -156,7 +160,7 @@ body {
     padding: 10px 50px 10px 20px;
     border-radius: 30px;
     border: 2px solid transparent;
-    font-size: 15px;
+    font-size: 13px;
     background: rgba(255, 255, 255, 0.95);
     transition: var(--transicao-padrao);
 }
@@ -240,7 +244,7 @@ body {
     color: var(--cor-texto-claro);
     font-size: 14px;
     font-weight: 500;
-    padding: 12px 25px;
+    padding: 8px 18px;
     transition: var(--transicao-padrao);
     position: relative;
 }
