@@ -34,7 +34,7 @@ $(document).ready(function() {
         $tbody.empty(); // Limpa a tabela visualmente
 
         if (cart.length === 0) {
-            $tbody.html('<tr><td colspan="5" style="text-align:center; padding:30px;">Seu carrinho está vazio. <a href="index.html">Voltar às compras</a></td></tr>');
+            $tbody.html('<tr><td colspan="5" style="text-align:center; padding:30px;">Ainda não há nada no seu carrinho 😥. <a href="index.html">Voltar às compras</a></td></tr>');
             updateTotals();
             return;
         }
