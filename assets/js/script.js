@@ -1,7 +1,51 @@
+//Função para filtrar conforme texto na barra de pesquisa
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    // selecionar os elementos necessários
+    const campoBusca = document.querySelector('.search-input');
+    const produtos = document.querySelectorAll('.product-item');
+
+    // verificação de existencia
+    if (!campoBusca || !produtos.length) {
+        return;
+    }
+
+    // Filtrando
+    function filtrarProdutos () {
+        // transforma texto digitado para minusculo
+        const termo = campoBusca.value.toLowerCase().trim();
+
+        //percorrendo cada produto
+        produtos.forEach(function(produto) {
+            //pegando titulo do produto
+            const titulo = produto.querySelector('.product-title')
+            const textoTitulo = titulo ? titulo.textContent.toLowerCase() : '';
+
+            // vendo se contém o termo
+            if (textoTitulo.includes(termo) || termo === '') {
+                //mostrar e esconder produto
+                produto.style.display = 'block';
+            } else {
+                produto.style.display = 'none';
+            }
+        });
+    }
+
+    // Filtrar enquanto digita
+    campoBusca.addEventListener('input', filtrarProdutos);
+
+    const formulario = document.querySelector('.search-bar');
+    if(formulario) {
+        formulario.addEventListener('submit', function(e) {
+            e.preventDefault();
+        });
+    }
+});
 $(document).ready(function() {
     console.log("Script carregado e jQuery pronto!"); // Teste no console
 
-    // --- 1. FUNÇÕES DO CARRINHO ---
+    // ---. FUNÇÕES DO CARRINHO ---
 
     // Ler o carrinho salvo
     function getCart() {
@@ -22,7 +66,7 @@ $(document).ready(function() {
         return Number(num || 0).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     }
 
-    // --- 2. RENDERIZAÇÃO (Desenhar a tabela) ---
+    // --- . RENDERIZAÇÃO (Desenhar a tabela) ---
     
     function renderCart() {
         var $tbody = $('.cart-table tbody');
@@ -83,7 +127,7 @@ $(document).ready(function() {
         $('#total-value').text(formatPrice(total));
     }
 
-    // --- 3. EVENTOS (Cliques) ---
+    // --- . EVENTOS (Cliques) ---
 
     // Botão "Adicionar ao Carrinho" (Home)
     $(document).on('click', '.add-to-cart', function(e) {
