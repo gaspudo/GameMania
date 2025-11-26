@@ -32,6 +32,27 @@ body {
 }
 
 /* ========================================
+   AJUSTES GLOBAIS MOBILE
+   ======================================== */
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+    
+    /* Reduz espaçamento entre seções */
+    .main-content {
+        padding-top: 0;
+    }
+    
+    /* Ajusta container principal */
+    main {
+        width: 100%;
+        overflow-x: hidden;
+    }
+}
+
+/* ========================================
    HEADER - CABEÇALHO
    ======================================== */
 
@@ -229,125 +250,145 @@ body {
     }
 }
 
-/* TABLETS PEQUENOS (até 768px) */
-@media (max-width: 768px) {
-    /* Header vira coluna */
-    .header-bottom {
-        flex-direction: column;
-        gap: 12px;
-        padding: 10px;
-    }
-    
-    /* Barra de busca ocupa largura total */
-    .search-bar {
-        width: 100%;
-        max-width: 100%;
-        order: 3; /* Move para baixo */
-    }
-    
-    .search-input {
-        font-size: 14px;
-        padding: 8px 45px 8px 15px;
-    }
-    
-    /* Logo menor */
-    .logo {
-        width: 100px;
-    }
-    
-    /* Links de autenticação menores */
-    .auth-button {
-        padding: 8px 15px;
-        font-size: 12px;
-    }
-    
-    /* Menu vira vertical */
-    .menu-bar ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 5px;
-        padding: 8px;
-    }
-    
-    .menu-bar li {
-        flex: 0 0 auto;
-    }
-    
-    .nav-link {
-        padding: 8px 12px;
-        font-size: 13px;
-    }
-    
-    /* Ícones menores */
-    .icons-container img {
-        width: 22px;
-        height: 22px;
-    }
-    
-    .user-actions figure img {
-        width: 18px;
-        height: 18px;
-    }
-}
 
-/* CELULARES (até 480px) */
-@media (max-width: 480px) {
+/* ========================================
+   HEADER MOBILE - CORRIGIDO
+   ======================================== */
+
+@media (max-width: 768px) {
     .site-header {
-        padding: 5px 8px;
+        padding: 8px 12px;
     }
     
-    .top-header {
-        gap: 5px;
+    /* Logo e links de auth em linha */
+    .logo-center {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10px;
     }
     
     .logo {
         width: 80px;
+        order: 1;
     }
     
     .auth-links {
-        flex-direction: row;
-        gap: 5px;
+        order: 2;
+        gap: 8px;
+        margin: 0;
     }
     
     .auth-button {
         padding: 6px 12px;
         font-size: 11px;
+        border-radius: 15px;
     }
     
     .auth-separator {
-        font-size: 11px;
+        font-size: 10px;
     }
     
-    /* Busca ainda menor */
+    /* Header inferior */
+    .header-bottom {
+        flex-direction: column;
+        padding: 10px;
+        gap: 10px;
+    }
+    
+    /* Esconde ícone da casa */
+    .user-actions {
+        display: none;
+    }
+    
+    /* Busca ocupa largura total */
+    .search-bar {
+        width: 100%;
+        max-width: 100%;
+        order: 1;
+    }
+    
     .search-input {
-        font-size: 13px;
-        padding: 7px 40px 7px 12px;
+        padding: 10px 45px 10px 15px;
+        font-size: 14px;
+        border-radius: 20px;
     }
     
     .search-button {
-        right: 10px;
-        padding: 6px;
+        right: 12px;
     }
     
     .search-image {
-        width: 16px;
-        height: 16px;
+        width: 18px;
+        height: 18px;
     }
     
-    /* Menu compacto */
+    /* Ícone carrinho */
+    .icons-container {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+    }
+    
+    .icons-container img {
+        width: 24px;
+        height: 24px;
+    }
+    
+    /* Menu horizontal compacto */
+    .menu-bar {
+        padding: 8px 5px;
+    }
+    
     .menu-bar ul {
-        gap: 3px;
-        padding: 5px;
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+        gap: 8px;
+        padding: 0 5px;
+    }
+    
+    .menu-bar ul::-webkit-scrollbar {
+        display: none; /* Chrome/Safari */
+    }
+    
+    .menu-bar li {
+        flex: 0 0 auto;
+        white-space: nowrap;
     }
     
     .nav-link {
-        padding: 6px 10px;
-        font-size: 12px;
+        padding: 8px 15px;
+        font-size: 13px;
+        display: inline-block;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-header {
+        padding: 5px 8px;
     }
     
-    /* Esconder ícone da casa no mobile */
-    .user-actions {
-        display: none;
+    .logo {
+        width: 70px;
+    }
+    
+    .auth-button {
+        padding: 5px 10px;
+        font-size: 10px;
+    }
+    
+    .search-input {
+        font-size: 13px;
+        padding: 8px 40px 8px 12px;
+    }
+    
+    .nav-link {
+        padding: 6px 12px;
+        font-size: 12px;
     }
 }
 /* ========================================
@@ -572,6 +613,101 @@ body {
         width: 35px;
         height: 35px;
         font-size: 28px;
+    }
+    
+    .banner-arrow-left {
+        left: 5px;
+    }
+    
+    .banner-arrow-right {
+        right: 5px;
+    }
+}
+
+/* ========================================
+   BANNER EM ALTA - MOBILE CORRIGIDO
+   ======================================== */
+
+@media (max-width: 768px) {
+    .banner {
+        padding: 35px 45px 25px;
+        margin: 25px 10px;
+        border-radius: 15px;
+    }
+    
+    .banner::before {
+        font-size: 20px;
+        top: 12px;
+        letter-spacing: 2px;
+    }
+    
+    .banner figure {
+        margin-top: 30px;
+        gap: 12px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding-bottom: 5px;
+    }
+    
+    .banner figure::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .banner img {
+        width: 180px;
+        min-width: 180px;
+        flex-shrink: 0;
+        height: 160px;
+        padding: 12px;
+    }
+    
+    /* Setas menores */
+    .banner-arrow-left,
+    .banner-arrow-right {
+        width: 38px;
+        height: 38px;
+        font-size: 30px;
+    }
+    
+    .banner-arrow-left {
+        left: 8px;
+    }
+    
+    .banner-arrow-right {
+        right: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner {
+        padding: 30px 40px 20px;
+        margin: 20px 5px;
+    }
+    
+    .banner::before {
+        font-size: 18px;
+        top: 10px;
+    }
+    
+    .banner figure {
+        margin-top: 25px;
+        gap: 10px;
+    }
+    
+    .banner img {
+        width: 160px;
+        min-width: 160px;
+        height: 140px;
+        padding: 10px;
+    }
+    
+    .banner-arrow-left,
+    .banner-arrow-right {
+        width: 32px;
+        height: 32px;
+        font-size: 26px;
     }
     
     .banner-arrow-left {
@@ -820,6 +956,102 @@ body {
         padding: 12px;
         font-size: 14px;
         letter-spacing: 0.5px;
+    }
+}
+
+/* ========================================
+   PRODUTOS EM DESTAQUE - MOBILE
+   ======================================== */
+
+@media (max-width: 768px) {
+    .produtos {
+        padding: 0 15px;
+        margin: 35px auto 40px;
+    }
+    
+    .produtos h2 {
+        font-size: 26px;
+        margin-bottom: 25px;
+        padding-bottom: 12px;
+    }
+    
+    .produtos h2::after {
+        width: 90px;
+        height: 3px;
+    }
+    
+    .product-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .product-item {
+        padding: 12px;
+        border-radius: 10px;
+    }
+    
+    .product-image {
+        height: 160px;
+        margin-bottom: 12px;
+        border-radius: 6px;
+    }
+    
+    .product-title {
+        font-size: 14px;
+        margin-bottom: 8px;
+        min-height: 38px;
+        line-height: 1.3;
+    }
+    
+    .product-price {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    
+    .add-to-cart {
+        padding: 10px 8px;
+        font-size: 12px;
+        border-radius: 6px;
+        letter-spacing: 0.3px;
+    }
+}
+
+@media (max-width: 480px) {
+    .produtos {
+        padding: 0 10px;
+        margin: 30px auto 35px;
+    }
+    
+    .produtos h2 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+    
+    .product-list {
+        gap: 10px;
+    }
+    
+    .product-item {
+        padding: 10px;
+    }
+    
+    .product-image {
+        height: 140px;
+    }
+    
+    .product-title {
+        font-size: 13px;
+        min-height: 36px;
+    }
+    
+    .product-price {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+    
+    .add-to-cart {
+        padding: 9px 6px;
+        font-size: 11px;
     }
 }
 
@@ -1491,5 +1723,134 @@ body {
     
     .copyright {
         font-size: 12px;
+    }
+}
+
+/* ========================================
+   FOOTER MOBILE - COMPACTO
+   ======================================== */
+
+@media (max-width: 768px) {
+    .site-footer {
+        padding: 30px 15px 20px;
+        margin-top: 40px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .footer-section {
+        padding: 0;
+        text-align: center;
+    }
+    
+    .footer-section h2 {
+        font-size: 16px;
+        margin-bottom: 12px;
+        padding-bottom: 8px;
+        border-bottom-width: 2px;
+    }
+    
+    .footer-section p,
+    .footer-section a,
+    .footer-section li {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+    
+    .social-media-links,
+    .payment-methods {
+        padding-left: 0;
+    }
+    
+    .social-media-links li,
+    .payment-methods li {
+        padding-left: 0;
+        margin-bottom: 8px;
+    }
+    
+    .social-media-links li::before,
+    .payment-methods li::before {
+        display: none;
+    }
+    
+    .newsletter-form {
+        flex-direction: column;
+        gap: 8px;
+        max-width: 300px;
+        margin: 15px auto 0;
+    }
+    
+    .newsletter-input {
+        width: 100%;
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+    
+    .newsletter-button {
+        width: 100%;
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    
+    .copyright {
+        margin-top: 25px;
+        padding-top: 15px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-footer {
+        padding: 25px 10px 15px;
+    }
+    
+    .footer-section h2 {
+        font-size: 15px;
+    }
+    
+    .footer-section p,
+    .footer-section a,
+    .footer-section li {
+        font-size: 12px;
+    }
+}
+
+/* ========================================
+   SCROLL SUAVE E MELHORIAS UX
+   ======================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Remove scroll horizontal indesejado */
+body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+
+/* Melhora toque em dispositivos mobile */
+@media (max-width: 768px) {
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    button, a, input {
+        touch-action: manipulation;
+    }
+    
+    /* Torna botões mais fáceis de clicar */
+    .add-to-cart,
+    .auth-button,
+    .search-button,
+    .nav-link {
+        min-height: 44px; /* Tamanho mínimo Apple/Google */
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }

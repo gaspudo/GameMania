@@ -1,0 +1,16 @@
+{
+  "name": "Game Mania",
+  "short_name": "Game Mania",
+  "description": "E-commerce de produtos gamer",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#3302e2",
+  "background_color": "#3302e2",
+  "icons": [
+    {
+      "src": "assets/imagens/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

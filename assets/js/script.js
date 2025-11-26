@@ -1,3 +1,43 @@
+// ========================================
+// MELHORIAS MOBILE
+// ========================================
+
+// Detectar se é mobile
+const isMobile = window.innerWidth <= 768;
+
+if (isMobile) {
+    // Permitir scroll horizontal no banner com toque
+    const bannerFigure = document.querySelector('.banner figure');
+    
+    if (bannerFigure) {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+        
+        bannerFigure.addEventListener('mousedown', (e) => {
+            isDown = true;
+            startX = e.pageX - bannerFigure.offsetLeft;
+            scrollLeft = bannerFigure.scrollLeft;
+        });
+        
+        bannerFigure.addEventListener('mouseleave', () => {
+            isDown = false;
+        });
+        
+        bannerFigure.addEventListener('mouseup', () => {
+            isDown = false;
+        });
+        
+        bannerFigure.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - bannerFigure.offsetLeft;
+            const walk = (x - startX) * 2;
+            bannerFigure.scrollLeft = scrollLeft - walk;
+        });
+    }
+}
+
 //Função para filtrar conforme texto na barra de pesquisa
 
 document.addEventListener('DOMContentLoaded', function() {
