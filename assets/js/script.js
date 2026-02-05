@@ -213,13 +213,11 @@ $(document).ready(function() {
 
     // Remover item (Carrinho)
     $(document).on('click', '.remove-btn', function() {
-        if(confirm('Remover este item?')) {
             var id = $(this).closest('tr').data('id');
             var cart = getCart();
             var newCart = cart.filter(x => x.id != id);
             saveCart(newCart);
-            renderCart();
-        }
+            renderCart();        
     });
 
     // --- INICIALIZAÇÃO ---
